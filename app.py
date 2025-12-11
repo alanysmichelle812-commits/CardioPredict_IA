@@ -1,4 +1,4 @@
-# app.py (Versión FINAL con 10 Features y Precisión 81.97%)
+# app.py (Versión FINAL: 81.97% Precisión, FIX de KeyError)
 import streamlit as st
 import pandas as pd
 import joblib
@@ -37,14 +37,17 @@ Nuestro modelo **XGBoost optimizado**, entrenado con datos clínicos reales, pro
 st.subheader("👤 Datos Clínicos del Paciente (10 Parámetros Clave)")
 col1, col2, col3 = st.columns(3)
 
+# Diccionarios de mapeo para Streamlit
 sex_options = {"Femenino (0)": 0, "Masculino (1)": 1}
 angina_options = {"No (0)": 0, "Sí (1)": 1}
 
 with col1:
     st.markdown("##### Información Básica")
     age = st.slider("1. Edad (años)", 30, 75, 50, key="age")
+    
+    # FIX: Se usa la etiqueta completa para buscar el valor numérico en el diccionario
     sex_label = st.selectbox("2. Sexo", list(sex_options.keys()), key="sex_label")
-    sex = sex_options[sex_label.split(" ")[0]] 
+    sex = sex_options[sex_label] # Busca "Femenino (0)" o "Masculino (1)" como clave.
     
     st.markdown("##### Tipo de Dolor de Pecho (CP)")
     chest_pain_type = st.select_slider("3. Tipo de Dolor en el Pecho (0-3)", options=[0, 1, 2, 3], key="cp_type")
@@ -60,8 +63,10 @@ with col2:
 with col3:
     st.markdown("##### Índices Cardíacos y Riesgo")
     max_hr = st.number_input("7. Frecuencia Cardíaca Máxima Alcanzada (thalach)", 70, 202, 150, key="max_hr")
+    
+    # FIX: Se usa la etiqueta completa para buscar el valor numérico
     exercise_angina_label = st.selectbox("8. Angina Inducida por Ejercicio (exang)", list(angina_options.keys()), key="angina_label")
-    exercise_angina = angina_options[exercise_angina_label.split(" ")[0]] 
+    exercise_angina = angina_options[exercise_angina_label] 
     
     st_depression = st.number_input("9. Depresión del Segmento ST (oldpeak)", 0.0, 6.5, 1.0, step=0.1, key="st_dep")
     num_major_vessels = st.slider("10. Vasos Principales Coloreados (ca, 0-3)", 0, 3, 0, key="num_vessels")
