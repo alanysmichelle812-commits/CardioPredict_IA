@@ -1,4 +1,4 @@
-# app.py (Versión FINAL: 81.97% Precisión, FIX de KeyError)
+# app.py (Versión FINAL: 81.97% Precisión, FIX de KeyError y Pricing LatAm)
 import streamlit as st
 import pandas as pd
 import joblib
@@ -109,14 +109,24 @@ if st.button("💰 Generar Reporte de Riesgo (Servicio Premium)", type="primary"
             """
         )
 
-# --- 4. MODELO DE NEGOCIO ---
-st.sidebar.title("💳 Modelo de Ingreso")
+# --- 4. MODELO DE NEGOCIO (Pricing LatAm) ---
+st.sidebar.title("💳 Modelo de Ingreso (Pricing LatAm)")
 st.sidebar.markdown(
     """
-    **CardioPredict S.A. opera bajo un modelo SaaS B2B:**
+    **CardioPredict S.A. opera bajo un modelo de suscripción y pago por uso (SaaS B2B).**
     
-    * **Valor de Mercado:** La precisión de **81.97%** es la clave de nuestro servicio premium.
-    * **Tarifas:** Básico ($99 USD/mes) o Empresarial ($399 USD/mes).
+    * **Valor Principal:** Precisión de **81.97%** (Modelo XGBoost).
+    
+    ### Planes de Adopción:
+    
+    **1. Plan Micro:** **$0.75 USD por predicción**
+    (Ideal para consultorios individuales o bajo volumen)
+    
+    **2. Plan Básico:** **$99 USD / mes**
+    (Hasta 100 análisis, para clínicas pequeñas)
+
+    **3. Plan Empresarial:** **$399 USD / mes**
+    (Análisis ilimitados y acceso API, para hospitales y aseguradoras)
     """
 )
 st.sidebar.markdown("---")
