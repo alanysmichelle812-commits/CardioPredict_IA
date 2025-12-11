@@ -123,8 +123,8 @@ st.sidebar.markdown(
     (Ideal para consultorios individuales o bajo volumen)
     
     **2. Plan Básico:** **$99 USD / mes**
-    (Hasta 100 análisis, para clínicas pequeñas)
-
+    **(Hasta 150 análisis)**, lo que representa un ahorro por volumen.
+    
     **3. Plan Empresarial:** **$399 USD / mes**
     (Análisis ilimitados y acceso API, para hospitales y aseguradoras)
     """
