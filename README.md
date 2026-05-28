@@ -56,4 +56,4 @@ Para iniciar la aplicación en su máquina:
 * **Nombres:** Alanys Ortega, Josue Miranda y Adrian Herrera
 * **Institución:** Universidad Latina de Panamá
 * **Contacto:** [Alanys Ortega en GitHub](https://github.com/alanysmichelle812-commits) o [alanysmichelle812@gmail.com](mailto:alanysmichelle812@gmail.com)
-* **Link** https://youtu.be/3FqROtnB9UI?si=630EnVlXSd_EI-bG 
+* **Link del video** https://youtu.be/3FqROtnB9UI?si=630EnVlXSd_EI-bG 
